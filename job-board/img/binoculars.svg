@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.911" height="25.724" viewBox="0 0 37.911 25.724">
+  <g id="binoculars" transform="translate(-5.416 -10.438)">
+    <path id="Path_45" data-name="Path 45" d="M82.175,119.057l11.132-10.722a3.963,3.963,0,0,1,5.416,0v11.078l-2.708,5.416Z" transform="translate(-74.352 -96.79)" fill="#386895"/>
+    <path id="Path_46" data-name="Path 46" d="M272.507,119.017l-11.091-10.682a3.963,3.963,0,0,0-5.416,0v11.078l2.708,5.416Z" transform="translate(-231.629 -96.79)" fill="#273b7a"/>
+    <rect id="Rectangle_705" data-name="Rectangle 705" width="10.832" height="5.416" transform="translate(18.955 25.33)" fill="#295a82"/>
+    <g id="Group_37" data-name="Group 37" transform="translate(5.416 19.915)">
+      <rect id="Rectangle_706" data-name="Rectangle 706" width="5.47" height="5.416" transform="translate(18.901 5.416)" fill="#273b7a"/>
+      <circle id="Ellipse_26" data-name="Ellipse 26" cx="8.124" cy="8.124" r="8.124" fill="#273b7a"/>
+    </g>
+    <circle id="Ellipse_27" data-name="Ellipse 27" cx="5.416" cy="5.416" r="5.416" transform="translate(8.124 22.622)" fill="#71e2ef"/>
+    <circle id="Ellipse_28" data-name="Ellipse 28" cx="8.124" cy="8.124" r="8.124" transform="translate(27.079 19.915)" fill="#121149"/>
+    <circle id="Ellipse_29" data-name="Ellipse 29" cx="5.416" cy="5.416" r="5.416" transform="translate(29.787 22.622)" fill="#02b2b2"/>
+    <path id="Path_47" data-name="Path 47" d="M243.132,123.591h0a1.354,1.354,0,0,1-1.354-1.354V108.452a1.354,1.354,0,0,1,1.354-1.354h0a1.354,1.354,0,0,1,1.354,1.354v13.786A1.354,1.354,0,0,1,243.132,123.591Z" transform="translate(-218.761 -96.66)" fill="#273b7a"/>
+    <path id="Path_48" data-name="Path 48" d="M255.481,107.1l-.055,0v16.488l.055,0a1.354,1.354,0,0,0,1.354-1.354V108.452A1.354,1.354,0,0,0,255.481,107.1Z" transform="translate(-231.11 -96.66)" fill="#121149"/>
+    <circle id="Ellipse_30" data-name="Ellipse 30" cx="3.036" cy="3.036" r="3.036" transform="translate(21.335 23.607)" fill="#181854"/>
+    <path id="Path_49" data-name="Path 49" d="M255.481,245.441l-.055,0v6.067l.055,0a3.036,3.036,0,1,0,0-6.072Z" transform="translate(-231.11 -221.833)" fill="#0b0b38"/>
+  </g>
+</svg>
