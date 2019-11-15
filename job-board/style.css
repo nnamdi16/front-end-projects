@@ -1,0 +1,13 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+}
+
+.logo {
+  font-weight: lighter;
+  font-size: 1rem;
+}
