@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <title>JOB FINDER WEBSITE UI</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>JOB FINDER WEBSITE UI</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        L<span>
+          <img src="./img/binoculars.svg" alt="Job finder's logo" /> </span
+        >cker
+      </div>
+      <div class="header-menu">
+        <ul>
+          <li>
+            <button class="header-tab active" onclick="menuDisplay(event)">
+              Jobs
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              review
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              salaries
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              rest
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              employers/post jobs
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="header-profile">
+        <h4>Rohit Sharma</h4>
+      </div>
+    </header>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
