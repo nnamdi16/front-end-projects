@@ -2,6 +2,9 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* 
+Header
+ */
 header {
   display: grid;
   grid-template-columns: 15% auto 15%;
@@ -9,12 +12,19 @@ header {
 
 }
 
+/* Header -logo */
 .header-logo {
   font-weight: lighter;
   font-size: 1rem;
   grid-column: 1/2;
 }
 
+.header-logo img {
+  width: 10%;
+  height: 10%;
+}
+
+/* Header-menu*/
 .header-menu {
   grid-column: 2/3;
   font-size: 0.9rem;
@@ -30,6 +40,7 @@ header {
 
 .header-menu li {
   width: 100%;
+  position: relative;
 }
 
 .header-profile {
@@ -54,9 +65,28 @@ header {
 }
 
 .header-menu button:hover {
-  background-color: #dddddd;
+  background-color: #EBEFF4;
 }
 
 .header-menu button.active {
-  background-color: #cccccc;
+  font-weight: bolder;
+}
+
+.header-active {
+  display: inline;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+}
+
+
+/* Header-Profile */
+.header-profile {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-user-profile-image img {
+  width: 80%;
+  height: 80%;
 }
