@@ -26,8 +26,11 @@
         <ul>
           <li>
             <button class="header-tab active" onclick="menuDisplay(event)">
-              Jobs
+              find Jobs
             </button>
+            <div class="header-active">
+              <img src="./img/menu-ellipse.svg" />
+            </div>
           </li>
           <li>
             <button class="header-tab" onclick="menuDisplay(event)">
@@ -52,9 +55,14 @@
         </ul>
       </div>
       <div class="header-profile">
-        <h4>Rohit Sharma</h4>
+        <div class="header-user-profile-image">
+          <img src="./img/profile-pic.svg" />
+        </div>
+        <div class="header-profile-identity"><h4>Rohit Sharma</h4></div>
+        <div class="header-more"><img src="./img/more_profile.svg" /></div>
       </div>
     </header>
+
     <script src="./js/index.js"></script>
   </body>
 </html>
