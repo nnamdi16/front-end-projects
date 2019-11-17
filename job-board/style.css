@@ -60,12 +60,13 @@ header {
   outline: none;
   text-transform: capitalize;
   padding: 1rem 1rem;
-  transition: 0.3s;
+  /* transition: 0.9s; */
   width: 100%;
 }
 
 .header-menu button:hover {
-  background-color: #EBEFF4;
+  border-bottom: 3px solid #EBEFF4;
+  /* background-color: #EBEFF4; */
 }
 
 .header-menu button.active {
@@ -89,4 +90,8 @@ header {
 .header-user-profile-image img {
   width: 80%;
   height: 80%;
+}
+
+div h3 {
+  color: green;
 }
