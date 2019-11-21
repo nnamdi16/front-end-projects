@@ -5,7 +5,7 @@ body {
 /* 
 Header
  */
-header {
+.job-head {
   display: grid;
   grid-template-columns: 15% auto 15%;
   align-items: center;
@@ -154,9 +154,66 @@ header {
 }
 
 
-
+/* Second main section */
 .second-main-section {
   grid-column: 2/3;
+}
+
+.job-category {
+  display: grid;
+  grid-template-rows: 5% 10% auto 15% 15% 10%;
+  grid-row-gap: 2rem;
+  padding: 2rem;
+}
+
+/* 
+.job-category+ul {
+  list-style: none;
+} */
+
+/* .job-category ul {
+  list-style: none;
+} */
+
+section>ul {
+  list-style: none;
+}
+
+.job-category-title {
+  grid-row: 1/2;
+}
+
+
+.job-category-title p {
+  margin: 0;
+}
+
+.job-category-head {
+  font-weight: bolder;
+}
+
+.job-category-head li {
+  font-weight: 100;
+}
+
+.job-category-sort {
+  grid-row: 2/3;
+}
+
+.job-category-distance {
+  grid-row: 3/4;
+}
+
+.job-category-estimate {
+  grid-row: 4/5;
+}
+
+.job-category-type {
+  grid-row: 5/6;
+}
+
+.job-category-location {
+  grid-row: 6/7;
 }
 
 .third-main-section {
