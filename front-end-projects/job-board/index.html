@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>JOB FINDER WEBSITE UI</title>
+  </head>
+  <body>
+    <header class="job-head">
+      <div class="header-logo">
+        L<span>
+          <img src="./img/binoculars.svg" alt="Job finder's logo" /> </span
+        >cker
+      </div>
+      <nav class="header-menu">
+        <ul>
+          <li>
+            <button class="header-tab active" onclick="menuDisplay(event)">
+              find Jobs
+            </button>
+            <div class="header-active">
+              <img src="./img/menu-ellipse.svg" />
+            </div>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              review
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              salaries
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              rest
+            </button>
+          </li>
+          <li>
+            <button class="header-tab" onclick="menuDisplay(event)">
+              employers/post jobs
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-profile">
+        <div class="header-user-profile-image">
+          <img src="./img/profile-pic.svg" />
+        </div>
+        <div class="header-profile-identity"><h4>Rohit Sharma</h4></div>
+        <div class="header-more"><img src="./img/more_profile.svg" /></div>
+      </div>
+    </header>
+    <main class="main-section">
+      <section class="first-main-section">
+        <div class="side-menu">
+          <ul>
+            <li class="side-menu-btn">
+              <img src="./img/home.svg" alt="home" />
+              <img
+                src="./img/home_icon.svg"
+                alt="home_icon"
+                class="side-menu-icon"
+              />
+            </li>
+            <li class="side-menu-btn">
+              <img src="./img/notifications.svg" alt="notification" />
+              <img
+                src="./img/notification_icon.svg"
+                alt="notification_icon"
+                class="side-menu-icon"
+              />
+            </li>
+            <li class="side-menu-btn">
+              <img src="./img/message.svg" alt="message" />
+              <img
+                src="./img/message_icon.svg"
+                alt="message_icon"
+                class="side-menu-icon"
+              />
+            </li>
+            <li class="side-menu-btn">
+              <img src="./img/settings.svg" alt="settings" />
+              <img
+                src="./img/settings_icon.svg"
+                alt="settings_icon"
+                class="side-menu-icon"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="second-main-section">
+        <div class="job-category">
+          <section class="job-category-title">
+            <header class="job-category-head">JOBS in</header>
+            <p>Singapore, Southern Malaysia</p>
+          </section>
+          <section class="job-category-sort">
+            <header class="job-category-head">Sort by :</header>
+            <p>Relevance - <span>date</span></p>
+          </section>
+          <section class="job-category-distance">
+            <header class="job-category-head">Distance:</header>
+            <p>Exact Location Only</p>
+            <ul>
+              <li>Within 5 kilometers</li>
+              <li>Within 10 kilometers</li>
+              <li>Within 15 kilometers</li>
+              <li>Within 20 kilometers</li>
+              <li>Within 25 kilometers</li>
+            </ul>
+          </section>
+          <section class="job-category-estimate">
+            <header class="job-category-head">Salary Estimate</header>
+            <ul>
+              <li>$3,23,800+ <span>(4)</span></li>
+              <li>$6,23,600+ <span>(3)</span></li>
+              <li>$7,23,800+ <span>(2)</span></li>
+              <li>$8,23,800+ <span>(2)</span></li>
+            </ul>
+          </section>
+          <section class="job-category-type">
+            <header class="job-category-head">Job Type</header>
+            <ul>
+              <li>Full-Time <span>(4)</span></li>
+              <li>Internship <span>(3)</span></li>
+              <li>Fresher <span>(2)</span></li>
+            </ul>
+          </section>
+          <section class="job-category-location">
+            <header class="job-category-head">Location</header>
+            <p>
+              Node Developer Jobs <br />
+              Nationwide
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="third-main-section"></section>
+      <section class="fourth-main-section"></section>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
