@@ -3,307 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-    content="Nnandi is a Professional cook, with Italian dish expo"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="index,follow"/>
-    <link rel="icon" href="/Dapino-Summer-Holiday-Palm-tree.ico">
-    <title>Nnamdi | Professional Cooking Book</title>
+
+    <title>Responsive Landing Page</title>
+    <!--============BOX ICONS ============= -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!---=========CSS ========== -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 <body>
-    <ng-container *ngIf="flag === 'currencyConversion'">
-        
-        <div>
-             <div class="form-row">
-                 <div class="form-group col-3">
-                     <label for="usr">Currency value</label>
-                     <input type="number" class="form-control" id="usr" [(ngModel)]="valueToBeConverted">
-                 </div>
-                 <div class="form-group col-3">
-                     <label for="inputState">Base Currency:</label>
-                     <select id="inputState" class="form-control" [(ngModel)]="baseCurrency">
-                       <option selected>Choose...</option>
-                       <option *ngFor="let item of countryCode " [value]="item">{{item}}</option>
-                     </select>
-                   </div>
-                  <div class="form-group col-3">
-                     <label for="inputState">Conversion Currency :</label>
-                     <select id="inputState" class="form-control" [(ngModel)]="conversionCurrency">
-                       <option selected>Choose...</option>
-                       <option *ngFor="let item of countryCode " [value]="item">{{item}}</option>
-                     </select>
-                   </div>
-                   <div class="form-group col-3 align-self-end">
-                     <button class="btn btn-primary" type="submit"  (click)="getSpecificCurrencyExchangeRate()">Submit</button>
-                   </div>
-                 <h3 *ngIf="convertedExchangeResult">{{convertedExchangeResult }} {{conversionCurrency}}</h3>
-             </div>
-         </div>   
-     </ng-container>
-     
-     <ng-container *ngIf="flag === 'historicalExchangeRate'" >
-             <div class="row">
-                 <div class="form-group col-4">
-                     <label for="usr">Start Date:</label>
-                     <input type="text"
-                     placeholder="Datepicker"
-                     class="form-control"
-                     bsDatepicker
-                     [bsConfig]="{ isAnimated: true }" 
-                     [(ngModel)] ="bsInlineRangeValue"
-                     name="startDate">
-                 </div>
-                 <div class="form-group col-4">
-                     <label for="endDate">End Date:</label>
-                     <input type="text"
-                        placeholder="Datepicker"
-                        class="form-control"
-                        bsDatepicker
-                        [bsConfig]="{ isAnimated: true }" 
-                        [(ngModel)] ="bsEndValue"
-                        name="endDate">
-                 </div>
-                <div class="form-group col-4 align-self-end">
-                     <button class="btn btn-primary" type="submit" (click) ="getHistoricalExchangeRate()">Submit</button>
-                </div>
-             </div>
-     
-                
-                     <div class="accordion mt-3 ml-3" id="accordionExample" >
-                         <div class="card" *ngFor="let item of historicalExchangeRate.rates | keyvalue " >
-                           <div class="card-header" id="headingOne">
-                             <h2 class="mb-0">
-                               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" [attr.data-target]="'#collapseOne'+item.key" aria-expanded="true" aria-controls="collapseOne">
-                                 {{item.key}}
-                               </button>
-                             </h2>
-                           </div>
-                       
-                           <div id="collapseOne{{item.key}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                             <div class="card-body" *ngFor="let data of item.value | keyvalue">
-                                 <ul class="list-group list-group-horizontal-md">
-                                     <li class="list-group-item">{{data.key}}</li>
-                                     <li class="list-group-item">{{data.value}}</li>
-                                   </ul>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                 
-         
-     </ng-container>
-     
-     <ng-container *ngIf="flag === 'OtherCurrencyConversions'">
-         <div class="mt-5 mb-5 px-0">
-             <div class="form-row">
-                 <div class="form-group col-3">
-                     <label for="usr">Start Date:</label>
-                     <input type="text"
-                     placeholder="Datepicker"
-                     class="form-control"
-                     bsDatepicker
-                     [bsConfig]="{ isAnimated: true }" 
-                     [(ngModel)] ="bsInlineRangeValue"
-                     name="startDate">
-                 </div>
-                 <div class="form-group col-3">
-                     <label for="endDate">End Date:</label>
-                     <input type="text"
-                        placeholder="Datepicker"
-                        class="form-control"
-                        bsDatepicker
-                        [bsConfig]="{ isAnimated: true }" 
-                        [(ngModel)] ="bsEndValue"
-                        name="endDate">
-                 </div>
-                 <div class="form-group col-3">
-                     <label for="inputState">Base Currency:</label>
-                     <select id="inputState" class="form-control" [(ngModel)]="baseCurrency">
-                       <option selected>Choose...</option>
-                       <option *ngFor="let item of countryCode " [value]="item">{{item}}</option>
-                     </select>
-                 </div>
-                <div class="form-group col-3 align-self-end">
-                 <button class="btn btn-primary" type="submit" (click) ="getOtherCurrencyExchangeRateConversion()">Submit</button>
-                </div>
-             </div>
-         </div>
-         <div class="accordion mt-3 ml-3" id="accordionExample" >
-             <div class="card" *ngFor="let item of historicalExchangeRate.rates | keyvalue " >
-               <div class="card-header" id="headingOne">
-                 <h2 class="mb-0">
-                   <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" [attr.data-target]="'#collapseOne'+item.key" aria-expanded="true" aria-controls="collapseOne">
-                     {{item.key}}
-                   </button>
-                 </h2>
-               </div>
-           
-               <div id="collapseOne{{item.key}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                 <div class="card-body" *ngFor="let data of item.value | keyvalue">
-                     <ul class="list-group list-group-horizontal-md">
-                         <li class="list-group-item">{{data.key}}</li>
-                         <li class="list-group-item">{{data.value}}</li>
-                       </ul>
-                 </div>
-               </div>
-             </div>
-           </div>
-     </ng-container>
- 
-   
-     <div>
-         <div class="row mt-5">
-             <ng-container *ngIf="flag === 'OtherCurrencyConversion'">
-         
-                 <div class="col-6 offset-4">
-                  <select id="inputState" class="form-control" [(ngModel)]="conversionType">
-                      <option selected [value]="">Choose Conversion Type</option>
-                      <option *ngFor="let item of conversionTypeList" [value]="item">{{item}}</option>
-                    </select>
-                 </div>
-                 <div class="col-2">
-                  <button class="btn btn-primary" type="submit" (click) ="setMenuItem(conversionType)">Submit</button>
-                 </div>
-                 
-                 
-           
-          </ng-container>
-     
-         </div>
-         <div class="row mt-5">
-             <ng-container *ngIf="menuItem ==='SPECIFIC_CURRENCY_EXCHANGE_RATE'">
-                 <div class="form-group col-3">
-                     <label for="inputState">Base Currency:</label>
-                     <select id="inputState" class="form-control" [(ngModel)]="baseCurrency">
-                       <option selected>Choose...</option>
-                       <option *ngFor="let item of countryCode " [value]="item">{{item}}</option>
-                     </select>
-                 </div>
-                 <div class="col-2">
-                     <button class="btn btn-primary" type="submit" (click) ="getSpecificCurrencyExchangeRate()">Submit</button>
-                 </div>
-             </ng-container>
-             <ng-container *ngIf="menuItem === 'EXCHANGE_RATE_BY_CURRENCIES'">
-                 <div>
-                     <div class="col-xs-12 col-12 col-md-4 form-group">
-                         <label for="startDate">Start Date:</label>
-                         <input type="text"
-                                placeholder="Datepicker"
-                                class="form-control"
-                                bsDatepicker
-                                [bsConfig]="{ isAnimated: true }" 
-                                [(ngModel)] ="bsInlineRangeValue"
-                                name="startDate">
-                     </div>
-                     <div class="col-xs-12 col-12 col-md-4 form-group">
-                         <label for="endDate">End Date:</label>
-                         <input type="text"
-                                placeholder="Datepicker"
-                                class="form-control"
-                                bsDatepicker
-                                [bsConfig]="{ isAnimated: true }" 
-                                [(ngModel)] ="bsEndValue"
-                                name="endDate">
-                     </div>
-                     <button type="button" (click) ="getHistoricalExchangeRate()">Get Historical Exchange Rate</button>
-                     <div *ngIf="loading">Loading...</div>
-                     <div *ngIf="errorMessage" class="alert alert-warning">
-                         <strong>Warning!</strong> {{errorMessage | json}}
-                     </div>
-                 
-                     <table class="table table-striped table-inverse table-responsive">
-                         <thead class="thead-inverse">
-                             <tr>
-                                 <th>Date</th>
-                                 <th colspan="2">Data</th>
-                                 
-                             </tr>
-                             </thead>
-                             <tbody>
-                                 <tr *ngFor="let item of historicalExchangeRate.rates | keyvalue ">
-                                     <td scope="row">{{item.key}}</td>
-                                     <td>
-                                         <tr *ngFor="let data of item.value | keyvalue ">
-                                             <td scope="row">{{data.key}}</td>
-                                             <td>{{data.value}}</td>
-                                         </tr>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                     <td scope="row"></td>
-                                     <td></td>
-                                     <td></td>
-                                 </tr>
-                             </tbody>
-                     </table>
-                     <pre>{{historicalExchangeRate | json}}</pre>
-                     
-                 </div>
-                 
-                 
-                 
-                 
-                 
-                 <form [formGroup]="form" (ngSubmit) = "getOtherCurrencyExchangeRateConversion()">
-                     <div class="form-group">
-                         <h2>Other Currency Exchange Rate Conversion</h2>
-                         <div class="col-xs-12 col-12 col-md-4 form-group">
-                             <label for="startDate">Start Date:</label>
-                             <input type="text"
-                                    placeholder="Datepicker"
-                                    class="form-control"
-                                    bsDatepicker
-                                    [bsConfig]="{ isAnimated: true }" 
-                                    formControlName="startDate">
-                         </div>
-                         <div class="col-xs-12 col-12 col-md-4 form-group">
-                             <label for="endDate">End Date:</label>
-                             <input type="text"
-                                    placeholder="Datepicker"
-                                    class="form-control"
-                                    bsDatepicker
-                                    [bsConfig]="{ isAnimated: true }" 
-                                    formControlName="endDate">
-                         </div>
-                         <label for="countryCode">Country Code:</label>
-                         <select formControlName='countryCode' class="form-countrol">
-                             <option disabled>Select Country Code</option>
-                             <option *ngFor="let item of countryCode ">{{item}}</option>
-                         </select>
-                     <div *ngIf="Forms.countryCode.touched && Forms.countryCode.invalid" class="alert alert-danger">
-                         <div *ngIf="Forms.countryCode.errors.required">Country Code is required.</div>
-                     </div>
-                     </div>
-                     <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
-                     <table class="table table-striped table-inverse table-responsive">
-                         <thead class="thead-inverse">
-                             <tr>
-                                 <th>Date</th>
-                                 <th colspan="2">Data</th>
-                                 
-                             </tr>
-                             </thead>
-                             <tbody>
-                                 <tr *ngFor="let item of historicalExchangeRate.rates | keyvalue ">
-                                     <td scope="row">{{item.key}}</td>
-                                     <td>
-                                         <tr *ngFor="let data of item.value | keyvalue ">
-                                             <td scope="row">{{data.key}}</td>
-                                             <td>{{data.value}}</td>
-                                         </tr>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                     <td scope="row"></td>
-                                     <td></td>
-                                     <td></td>
-                                 </tr>
-                             </tbody>
-                     </table>
-                     <pre>{{historicalExchangeRate | json}}</pre>
-                 </form>
-             </ng-container>
-         </div>
-     </div>
+    <!-- ===============SCROLL TOP ================== -->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+    </a>
+   <!--======= HEADER ======= -->
+   <header class="1-header " id="header">
+    <nav class="nav bd-container">
+        <a href="#" class="nav__logo">Christmas Gift</a>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active-link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#share" class="nav__link">Share</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#decorations" class="nav__link">Decorations</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#accessory" class="nav__link">Accessory</a>
+                </li>
+                <li><i class='bx bxs-toggle-left change-theme' id="theme-button"></i></li>
+            </ul>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+    </nav>
+</header>
+
+<main class="1-main">
+    <!-- ============ HOME ================= -->
+    <section class="home" id="home">
+        <div class="home__container bd-container bd-grid">
+            <div class="home__img">
+                <img src="./assets//img/home.png" alt="" srcset="">
+            </div>
+            <div class="home__data">
+                <h1 class="home__title">Send A Gift For Christmas</h1>
+                <p class="home__description">In these year holidays send a gift to your loved one and share the happiness at Christmas</p>
+                <a href="#" class="button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============== SHARE ==================== -->
+    <section class="share section bd-container" id="share">
+        <div class="share__container bd-grid">
+            <div class="share__data">
+                <h2 class="section-title-center">Sharing Is The Best Gift<br>You Can Give </h2>
+                <p class="share__description">Sharing these holidays is the best gift you can give,
+                     give a present or share your love with people you love the most and celebrate with great happiness  </p>
+                <a href="#" class="button">Send a Gift</a>
+            </div>
+            <div class="share__img">
+                <img src="./assets/img/shared.png" alt="" srcset="">
+            </div>
+        </div>
+    </section>
+
+  <!-- ================ DECORATION ======================== -->
+    <section class="decoration section bd-container" id="decoration">
+        <h2 class="section-title">Give Christmas Decoration<br>For Your Home </h2>
+
+        <div class="decoration__container bd-grid">
+            <div class="decoration__data">
+                <img src="./assets/img/decoration1.png" alt="" srcset="" class="decoration__img">
+                <h3 class="decoration__title">Christmas Bells</h3>
+                <a href="#" class="button button-link">Go Shopping</a>
+            </div>
+
+            <div class="decoration__data">
+                <img src="./assets/img/decoration2.png" alt="" srcset="" class="decoration__img">
+                <h3 class="decoration__title">Christmas Candies</h3>
+                <a href="#" class="button button-link">Go Shopping</a>
+            </div>
+
+            <div class="decoration__data">
+                <img src="./assets/img/decoration3.png" alt="" srcset="" class="decoration__img">
+                <h3 class="decoration__title">Christmas Trees</h3>
+                <a href="#" class="button button-link">Go Shopping</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ================ACCESSORIES==================== -->
+    <section class="decoration section bd-container" id="accessory">
+        <h2 class="section-title">New Christmas <br> Accessories</h2>
+        <div class="accessory__container bd-grid">
+            <div class="accessory__content">
+                <img src="./assets/img/accessory1.png" alt="" class="accessory__img">
+                <h3 class="accessory__title">Snow Globe</h3>
+                <span class="accessory__category">Accessory</span>
+                <span class="accessory__preci">$9.45</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+
+            <div class="accessory__content">
+                <img src="./assets/img/accessory2.png" alt="" class="accessory__img">
+                <h3 class="accessory__title">Candy</h3>
+                <span class="accessory__category">Accessory</span>
+                <span class="accessory__preci">$2.52</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+
+            <div class="accessory__content">
+                <img src="./assets/img/accessory3.png" alt="" class="accessory__img">
+                <h3 class="accessory__title">Angel</h3>
+                <span class="accessory__category">Accessory</span>
+                <span class="accessory__preci">$13.15</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+
+            <div class="accessory__content">
+                <img src="./assets/img/accessory4.png" alt="" class="accessory__img">
+                <h3 class="accessory__title">Sphere</h3>
+                <span class="accessory__category">Accessory</span>
+                <span class="accessory__preci">$4.25</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+
+            <div class="accessory__content">
+                <img src="./assets/img/accessory5.png" alt="" class="accessory__img">
+                <h3 class="accessory__title">Surprise gift</h3>
+                <span class="accessory__category">Accessory</span>
+                <span class="accessory__preci">$7.99</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SEND GIFT ===================-->
+    <section class="send section">
+        <div class="send__container bd-container bd-grid">
+            <div class="send__content">
+                <h2 class="section-title-center send__title">Send Gift</h2>
+                <p class="send__description">Start giving away before the holidays are over. Wrore the home address of the person who will send the gift</p>
+                <form action="">
+                    <div class="send__direction">
+                        <input type="text" placeholder="House address" class="send__input">
+                        <a href="" class="button">Send</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="send__img">
+                <img src="./assets/img/send.png" alt="" srcset="">
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+
+<!--==========FOOTER==============-->
+<footer class="footer section">
+    <div class="footer__container bd-container bd-grid">
+        <div class="footer__content">
+            <h3 class="footer__title">
+                <a href="#" class="footer__logo">Christmas Gift</a>
+            </h3>
+            <p class="footer__description">I sent a gift and it gives<br> happinness</p>
+        </div>
+        <div class="footer__content">
+            <h3 class="footer__title">Our Services</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Pricing</a></li>
+                <li><a href="#" class="footer__link">Discounts</a></li>
+                <li><a href="#" class="footer__link">Shipping mode</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Our Company</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Blog</a></li>
+                <li><a href="#" class="footer__link">About us</a></li>
+                <li><a href="#" class="footer__link">Our mission</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Social</h3>
+            <a href="#" class="footer__social"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </div>
+
+    <p class="footer__copy">&#169; 2021 Bedimcode. All right reserved </p>
+</footer>
+
+
+<!--=====Scroll Reveal========-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--========MAIN JS ========-->
+<script src="./assets/js/main.js"></script> 
 </body>
 </html>
